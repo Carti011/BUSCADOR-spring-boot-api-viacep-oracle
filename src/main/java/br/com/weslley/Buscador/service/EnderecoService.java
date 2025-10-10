@@ -32,15 +32,15 @@ public class EnderecoService {
             ViaCepResponseDTO viaCepResponseDTO = viaCepClient.buscaEnderecoPorCep(cep);
 
             // Converte o DTO retornado pela API para a nossa entidade Endereco
-            Endereco novoEndereco = new Endereco();
-            novoEndereco.setCep(viaCepResponseDTO.cep());
-            novoEndereco.setLogradouro(viaCepResponseDTO.logradouro());
-            novoEndereco.setBairro(viaCepResponseDTO.bairro());
-            novoEndereco.setLocalidade(viaCepResponseDTO.localidade());
-            novoEndereco.setUf(viaCepResponseDTO.uf());
+            Endereco endereco = new Endereco();
+            endereco.setCep(viaCepResponseDTO.cep());
+            endereco.setLogradouro(viaCepResponseDTO.logradouro());
+            endereco.setBairro(viaCepResponseDTO.bairro());
+            endereco.setLocalidade(viaCepResponseDTO.localidade());
+            endereco.setUf(viaCepResponseDTO.uf());
 
             // Salva no nosso banco e o retorna
-            return enderecoRepository.save(novoEndereco);
+            return enderecoRepository.save(endereco);
         });
     }
 }
