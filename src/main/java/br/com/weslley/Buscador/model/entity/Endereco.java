@@ -10,7 +10,7 @@ import lombok.*;
 @Getter
 @Setter
 @NoArgsConstructor // Gera o construtor vazio (sem argumentos)
-@AllArgsConstructor // Gera um construtor com todos os argumentos
+@AllArgsConstructor // Gera um construtor com todos os argumentoss e
 public class Endereco {
     @Id
     private String cep;
